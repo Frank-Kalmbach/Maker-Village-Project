@@ -1,0 +1,355 @@
+/*************************
+GENERAL CSS RULES - sitewide at fairly pervasive level
+*************************/
+
+body {
+  font-family: 'Open Sans', sans-serif;   /* sets all fonts on site except for h2*/
+}
+
+#imagewrapper {         /* adding new properties to div id="imagewrapper" */
+  max-width: 940px;     
+  margin: 0 auto;
+  padding: 0 5%;
+  /* width no larger than 940px across*/
+  /* margin 0 sets top/bottom to zero; auto fills in any space left/right left over*/
+  /* padding add spacing along inside of element*/
+      /*padding 0 is the top/bottom and 5% of total width of wrapper on left/right */
+  /* this div flexes with the browser window */
+}
+  
+a {
+  text-decoration: none;
+}
+
+/* this will impact all the images on the site from the "img" folder */
+img { 
+  max-width: 100%;    /* important for resizing the list items which contain the images */
+                      /* 100% tells the images to completely fill their parent container */
+                      /* should the container shrink down in size, so will the image */
+                      /* otherwise, the images would break out of their containers */
+}
+
+h5 {
+  margin: 0 0 1em 0;
+}
+
+/*************************
+HEADING FOR ALL PAGES
+*************************/
+
+/* fixing issue with h1 pushing header with its margin */
+header {
+  float: left;          /* practical use for desktop layout style */
+  margin: 0 0 30px 0;   /* top 0, right 0, bottom 30px, 0 left */
+  padding: 5px 0 0 0;   /* remember 4 values is clockwise from top */
+  width: 100%;          /* since its a floating element, it doesnt have an explicit width anymore
+                            This says that the element stretches across the entire page */
+}
+
+#logo {                 /* styling the header element */
+  text-align: center;
+  margin: 0;
+  /* text-align will center text in the header */
+  /* margin 0 sets no spacing for top/bottom/left/right all at once */
+}
+
+/header ul {
+  list-style: none;
+}  
+
+/* Using google fonts for h1 */
+h1 {
+  font-family: 'Changa One', sans-serif;  /* adding in the custom google fonts for h1 */
+  /* sans-serif is the fallback in case google fonts goes down or takes down the changa font */
+  margin: 15px 0;       /* margins of 15 pixels top/bottom and zero left/right */
+  font-size: 1.75em;    /* em is a relative unit - scales with browser size */
+                        /* 1 em is equal to the current font size - 16 pixels by default */
+  font-weight: normal;  /* unbolds the default boldness for a headline */
+  line-height: 0.8em;   /* this determines the amount of space btwn each line of text */
+}
+
+h2 {
+  font-size: 0.75em;    /* smaller than default */
+  margin: -5px 0 0;     /* negative margin will pull the element closer to elements around it */
+                        /* first value sets the top, 2nd is left/right, 3rd is bottom */
+  font-weight: normal;  /* unbolds the default boldness of a headline */
+}
+
+
+
+/*************************
+NAVIGATION FOR LINKS
+*************************/
+
+nav {
+  text-align: center;     /* aligns the nav text to the center */
+  padding: 10px 0;
+  margin: 20px 0 0;       /* some margin to top, but everything else zero */
+}
+
+/* fixing issue with nav links not centering properly */
+nav ul {
+  list-style: none;       /* just making sure there are no bullet points */
+  margin: 0 10px;         /* zero top/bottom and 10px left/right */
+  padding: 0;
+}  
+ 
+/* Block level elements take up space on page and appear to push other elements out of the way*/
+/* Inline elements mostly just text and appears in the same line as the rest of text */
+/* Inline-Block lets items be side by side but they retain block features such as width/height */
+
+nav li {
+  display: inline-block;  /* puts all links in a nice straight line */
+}
+
+nav a {
+  padding: 15px 10px;     /* adds padding to links on all sides so they are easier to select */
+}
+
+
+
+/*************************
+FOOTER
+*************************/
+
+footer {
+  font-size = 0.75em;     /* now footer text will be relatively smaller */
+  text-align: center;
+  clear: both;            /* frees both sides of the footer from floating with the images in                                    why.html */
+  padding-top: 50px;      /* only sets padding for the top - fixed pixel sized - not relative*/
+  color: #ccc;            /* sets to very light grey color */
+}
+
+/* below resizes the social media icons to a smaller size at high resolution */
+.social-icon {            /* class selector with the dot */
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;          /* zero top/bottom and 5 left/right to separate multiple icons */
+
+}
+
+/*************************
+SPECIFIC FORMATTING THE INDEX.HTML PAGE
+*************************/
+
+#poem {
+  width: 100%;
+  text-align: center;
+}
+
+#poem p {
+  margin: 3px;
+}
+
+#photoform {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* formatting the creative commons icons */
+.cc-tile {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.cc-pd {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+
+
+/*************************
+SPECIFIC FORMATTING FOR THE WHY.HTML PAGE
+*************************/
+
+#greatfilter {
+  width: 100%;
+  text-align: center;
+}
+
+#greatfilter p {
+  display: block;
+  margin: 10px 15% 0;
+  padding-bottom: 10px;
+}
+
+#gallery {              /*selecting the gallery element on why.html page for styling*/
+  margin: 0;
+  padding: 0;
+  list-style: none;     /* will remove the default bullet style for an unordered list */
+}
+
+/* Want the images to be in two columns */
+/* styling the list items in the gallery using float */
+/* "float" makes the elements appear side-by-side on the display */
+#gallery li {
+  float: left;          /* float property lets positioning of elements in a special way */
+  width: 45%;           /* regardless of size of browser window, each image will only take up 45%                                   of its parent element */
+  margin: 2.5%;         /* this creates a 5.0% margin for each each image; fills extra space */
+  color: #bdc3c7;
+}
+
+/* styling the paragraphs within the lists */
+#gallery li a p {     /* selecting all the nested elements in the image gallery */
+  margin: 0;            /* zeroing out the default margins for paragraphs */
+  padding: 5%;          /* give a little bit of padding */
+  font-size: 0.75em;    /* decrease the relative font size because they were a little too big */
+  color: #bdc3c7;       /* gets rid of the prior green link color */
+}
+
+/* fixing the font size for the license captions */
+#license {
+  margin: 0;
+  padding: 0;
+  font-size: 0.25em;
+  color: #bdc3c7;
+}
+/* fixing the font size and line spacing for creative commons attrib links */
+#cclink {
+  margin: 0;
+  padding: 0;
+  font-size: 0.25em;
+}
+
+
+
+/*************************
+SPECIFIC FORMATTING FOR THE PROJECT AND NEXTSTEPS HTML PAGE
+*************************/
+
+.townsquare-photo {
+  display: block;         /*allows use automargins to center the element on page*/
+  width: 75%;
+  max-width: 700px;       /*block display actually takes up height and width on page */
+  margin: 0 auto 0; 
+  border-radius: 85%;    /* allows rounded corners - 100% is circle */
+}
+
+.nextsteps-photo {
+  display: block;         /*allows use automargins to center the element on page*/
+  max-width: 400px;       /*block display actually takes up height and width on page */
+  margin: 0 auto 0; 
+  border-radius: 70%;    /* allows rounded corners - 100% is circle */
+}
+
+.plantcaption {
+  max-width: 940px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.cc-pd-nextsteps {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.project {
+  width: 100%;
+  list-style: none;
+  display: block;
+  align-content: center;
+  margin: 0 auto;
+  padding: 5px 0 0 0;
+}
+
+.timeline {
+  width: 100%;
+  list-style: none;
+  display: block;
+  align-content: center;
+  margin: 0;
+  padding: 5px 0 0 0;
+}
+
+.bullets {
+  width: 100%;
+  list-style: none;
+  display: block;
+  align-content: center;
+  margin: 0;
+  padding: 0 0 5px 0;
+}
+
+/*************************
+SPECIFIC FORMATTING FOR THE CONTACT HTML PAGE
+*************************/
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.contact-info a {                 /* formatting to make room for the mail icon */
+  display: block;                 /* each img or anchor image will take up space */
+  min-height: 20px;               /* need at least 20px height for mail icon */
+  background-repeat: no-repeat;   /* turn off default of repeat */
+  background-size: 20px 20px;     /* resizing the mail icon to 20x20px */
+  padding: 0 0 0 30px;            /* want lots of extra space on interior left side */
+  margin: 0 0 10px;               /* mainly to give vertical room if used phone, etc icon */
+}
+
+/*adding images for stylistic purposes - ie icons*/
+/*ultimately cleaner code to include icons in css*/
+.contact-info li.mail a {      /* selecting the li with class phone and nested anchor element*/
+  background-image: url('../img/mail.png');  /* .. go up one directory */
+
+}
+
+
+
+/*************************
+COLOR SCHEMES
+*************************/
+
+/* Sitewide body color */
+body {                  /* essentially encapsulates entire website */
+  background-color: #fff;
+  color: #999;
+}
+
+/* green header for all pages */
+header {                /* adding two new declarations to all header elements */
+  background: #6ab47b;
+  border-color: #599a68;
+}
+
+/* nav background on mobile devices */
+nav {                   /* selects all nav elements on pages */
+  background: #599a68;
+}
+
+/* logo text color */
+h1, h2 {                /* selects both headline elements at same time with comma */
+  color: #fff;          /* pure white - #fff is shorthand for #ffffff */
+}
+
+/* colored all links green */
+a {                     /* this will select all the anchor elements on pages */
+  color: #6ab47b;       /* makes all the links on the pages green */
+}
+
+/* color for the nav links */
+nav a, nav a:visited {  /* selects all anchor elements in nav on pages */
+  /* the nav a:visited is a pseudo class
+      makes the links not change color when they are clicked */
+  color: #fff;
+}
+
+/* "selected" nav and section link color */
+nav a.selected, nav a:hover, section a:hover {   
+  /* rule formatting the selected class in nav links */
+  /* nav a:hover is a pseudo class that will apply the color to hovering with mouse */
+  color: #32673f;
+}
+
+
+
+

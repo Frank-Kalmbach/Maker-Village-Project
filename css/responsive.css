@@ -1,0 +1,87 @@
+/************************
+SCREEN SIZES ABOVE 480px
+************************/
+
+/*telling browser to target digital screens vs print media
+the AND requires the min-width to be satisfied as well.
+Both conditions need to be true for it to take effect.
+If screen is any larger than 480, then apply the following styles.
+480px "breakpoint" because fairly common size for mobiles in landscape mode.*/
+
+@media screen and (min-width: 480px) {
+
+  /************************
+  TWO COLUMN LAYOUT
+  ************************/
+
+  /* I am taking this out because I dont like the 2 columns with all the text in the 1st column */
+  /*
+  #primary {
+    width: 50%;     /*left column to take up 1/2 screen*/
+/*    float: left;
+  }
+
+  #secondary {
+    width: 40%;     /*right column*/
+/*    float: right;
+  }
+*/  
+  
+  /************************
+  COLUMN STYLES FOR WHY PAGE - IMAGES
+  ************************/
+
+  #gallery li {
+    width: 28.3333%;
+  }
+  
+  /* Clearing the caption issue with the columns of images in Why.html when browser becomes smaller
+     Captions are wrapping lines as smaller (becoming taller) and pushing images out of way.
+     The pseudo class is selecting every 4th item (3n+1) */
+  #gallery li:nth-child(3n+1) {
+    clear: left;    /* this applies the clear command to every 4th item */
+  } 
+}
+
+/************************
+SCREEN SIZES ABOVE 660px - targets large tablets and normal sized desktops
+************************/
+
+@media screen and (min-width: 660px) {
+
+  /************************
+  HEADER CHANGES FOR LARGER SCREENS
+  ************************/
+ 
+  nav {
+    background: none;     /*removed background so text can sit against header background*/
+    float: right;
+    font-size: 1.125em;
+    margin-right: 5%;
+    text-align: right;    /*aligned all text to the right*/
+    width: 75%;           /*I changed from 45% because of having 5 links*/
+  }
+
+  /* now floating the logo (ie page title) to the left on larger screens */
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 75%;         /*I changed from 45% due to longer title text*/ 
+  }
+  
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.25em;    /*I changed from 0.825em because I like the larger subtitle*/
+    margin-bottom: 20px;
+  }
+
+  header {
+    border-bottom: 5px solid #599a68;  /*adds a bottom dark border 5px thick*/
+    margin-bottom: 60px;               /*giving some separation in header*/
+  }
+  
+}
